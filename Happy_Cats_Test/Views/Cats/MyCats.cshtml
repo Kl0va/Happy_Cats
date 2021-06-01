@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Happy_Cats_Test.Models.Cats>
+@{
+    ViewData["Title"] = "Мои котики";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>MyCats</title>
+</head>
+<body>
+    <form asp-action="DeleteCat" asp-controller="Cats">
+        <table class="table">
+            <tr>
+                <td>
+                    <h2>Имя кота</h2>
+                </td>
+                <td>
+                    <h2>История</h2>
+                </td>
+                <td>
+                    <h2>Описание</h2>
+                </td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                @if (item.Email_User == User.Identity.Name)
+                {
+
+                    <tr>
+                        <td>
+                            <h2>@item.Name_Cat</h2> <button type="submit">Удалить</button>
+                        </td>
+                        <td>
+                            <h2>@item.History</h2>
+                        </td>
+                        <td>
+                            <h2>@item.Description_Cat</h2>
+                        </td>
+                    </tr>
+
+                }
+            }
+        </table>
+    </form>
+</body>
+</html>

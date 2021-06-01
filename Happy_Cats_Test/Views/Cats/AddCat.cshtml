@@ -1,0 +1,34 @@
+﻿@model Happy_Cats_Test.Models.Cats
+@{
+    ViewData["Title"] = "Добавление котика";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCat</title>
+</head>
+<body>
+    <form asp-action="AddCat" asp-controller="Cats">
+        <div>
+            <div>
+                <label asp-for="Name_Cat">Введите имя котика</label>
+                <input type="text" asp-for="Name_Cat" />
+            </div>
+            <div>
+                <label asp-for="Description_Cat">Введите описание котика</label>
+                <input type="text" asp-for="Description_Cat" />
+            </div>
+            <div>
+                <label asp-for="History">Введите историю котика</label>
+                <input type="text" asp-for="History" />
+            </div>
+            <div>
+                <input type="submit" value="Подтвердить" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
